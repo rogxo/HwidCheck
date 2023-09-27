@@ -51,7 +51,7 @@ namespace HwidChecker
 		CHAR Disk[4];
 		DWORD Enc = 0xDEF1FA9D;
 		*(DWORD*)Disk = Enc ^ 0xDEADC0DE;
-		::GetVolumeInformationA("C:\\", NULL, 0, &SerialNum, NULL, NULL, NULL, 0);
+		::GetVolumeInformationA(Disk, NULL, 0, &SerialNum, NULL, NULL, NULL, 0);
 		return SerialNum;
 	}
 
